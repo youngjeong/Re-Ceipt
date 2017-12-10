@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA911FD9401100336D3F /* AppDelegate.swift */; };
-		1F97CA941FD9401100336D3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* ViewController.swift */; };
+		1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* LoginViewController.swift */; };
 		1F97CA971FD9401100336D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA951FD9401100336D3F /* Main.storyboard */; };
 		1F97CA991FD9401100336D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA981FD9401100336D3F /* Assets.xcassets */; };
 		1F97CA9C1FD9401100336D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F97CA911FD9401100336D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F97CA931FD9401100336D3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F97CA931FD9401100336D3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F97CA961FD9401100336D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F97CA981FD9401100336D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F97CA9B1FD9401100336D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,22 @@
 		1F97CA901FD9401100336D3F /* Re-Ceipt */ = {
 			isa = PBXGroup;
 			children = (
+				1F97CAA31FDD059B00336D3F /* Controller */,
 				1F97CA911FD9401100336D3F /* AppDelegate.swift */,
-				1F97CA931FD9401100336D3F /* ViewController.swift */,
 				1F97CA951FD9401100336D3F /* Main.storyboard */,
 				1F97CA981FD9401100336D3F /* Assets.xcassets */,
 				1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */,
 				1F97CA9D1FD9401100336D3F /* Info.plist */,
 			);
 			path = "Re-Ceipt";
+			sourceTree = "<group>";
+		};
+		1F97CAA31FDD059B00336D3F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F97CA931FD9401100336D3F /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F97CA941FD9401100336D3F /* ViewController.swift in Sources */,
+				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U86GXXEB7;
 				INFOPLIST_FILE = "Re-Ceipt/Info.plist";
@@ -289,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U86GXXEB7;
 				INFOPLIST_FILE = "Re-Ceipt/Info.plist";
