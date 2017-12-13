@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Foundation
 
 class LoginViewController: UIViewController {
     @IBOutlet var idTextField: UITextField!
     @IBOutlet var pwTextField: UITextField!
     
+    var ind: UIActivityIndicatorView? = nil;
+    
     @IBAction func onSignUp() {
-        
+        Communicator.signUp(self.view, username: idTextField.text!, password: pwTextField.text!) {
+
+        }
     }
 
     @IBAction func onSignIn() {
-        
+        Communicator.signIn(self.view, username: idTextField.text!, password: pwTextField.text!) {
+
+        }
     }
     
     override func viewDidLoad() {
