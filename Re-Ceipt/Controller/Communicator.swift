@@ -11,7 +11,8 @@ import Foundation
 import Alamofire
 
 class Communicator {
-    static var serverURL: String = "http://52.78.44.214:8000/"
+    static var serverURL: String = "http://127.0.0.1:8000/"
+//    static var serverURL: String = "http://52.78.44.214:8000/"
     static var headers = [String:String]()
     
     static func showActivityIndicatory(parent: UIView) -> UIActivityIndicatorView{
@@ -128,6 +129,48 @@ class Communicator {
                 onSuccess()
         }
     }
+    
+    static func getMySpend(_ parent: UIView, onSuccess: @escaping () -> Void) {
+        let api = "myspend/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseJSON { (response) -> Void in
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    
+                }
+                
+                
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                guard let value = response.result.value as? [Dictionary<String, String>] else {
+                    print("Malformed data received from fetchAllRooms service")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                print(value)
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                onSuccess()
+        }
+    }
+    
+    
     
     static func onFail(_ parent: UIView, _ ind: UIActivityIndicatorView) {
         stopActivityIndicatory(parent: parent, actInd: ind)
