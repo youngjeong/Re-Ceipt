@@ -13,66 +13,11 @@
 		1F97CA991FD9401100336D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA981FD9401100336D3F /* Assets.xcassets */; };
 		1F97CA9C1FD9401100336D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */; };
 		1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */; };
+		500800ABE3EA6702C5E85551 /* Pods_Re_Ceipt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9AB89568A3707C5088E474F /* Pods_Re_Ceipt.framework */; };
+		7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */; };
+		7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DA1FE5225D00BB9F02 /* User.swift */; };
+		7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DC1FE5227500BB9F02 /* Spend.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1FE8A9F31FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		1FE8A9F51FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS Tests";
-		};
-		1FE8A9F71FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire macOS";
-		};
-		1FE8A9F91FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire macOS Tests";
-		};
-		1FE8A9FB1FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		1FE8A9FD1FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		1FE8A9FF1FE1482200EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
-		1FE8AA011FE1486600EBCBA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +27,13 @@
 		1F97CA981FD9401100336D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F97CA9B1FD9401100336D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F97CA9D1FD9401100336D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpendViewController.swift; sourceTree = "<group>"; };
+		7D9679DA1FE5225D00BB9F02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7D9679DC1FE5227500BB9F02 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
+		A9AB89568A3707C5088E474F /* Pods_Re_Ceipt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Re_Ceipt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA28C843FBE11CC5ED54C89 /* Pods-Re-Ceipt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Re-Ceipt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt.debug.xcconfig"; sourceTree = "<group>"; };
+		EBBDD6945001A35ABAC10E73 /* Pods-Re-Ceipt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Re-Ceipt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500800ABE3EA6702C5E85551 /* Pods_Re_Ceipt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +53,8 @@
 			children = (
 				1F97CA901FD9401100336D3F /* Re-Ceipt */,
 				1F97CA8F1FD9401100336D3F /* Products */,
-				1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */,
+				F48FD2190E3117AE3BAD49A5 /* Pods */,
+				3C1CC3D7E9785EC5EB8CB764 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +69,7 @@
 		1F97CA901FD9401100336D3F /* Re-Ceipt */ = {
 			isa = PBXGroup;
 			children = (
+				7D9679D91FE5222600BB9F02 /* Model */,
 				1F97CAA31FDD059B00336D3F /* Controller */,
 				1F97CA911FD9401100336D3F /* AppDelegate.swift */,
 				1F97CA951FD9401100336D3F /* Main.storyboard */,
@@ -132,22 +85,35 @@
 			children = (
 				1F97CA931FD9401100336D3F /* LoginViewController.swift */,
 				1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */,
+				7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		1FE8A9E91FE1482200EBCBA7 /* Products */ = {
+		3C1CC3D7E9785EC5EB8CB764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1FE8A9F41FE1482200EBCBA7 /* Alamofire.framework */,
-				1FE8A9F61FE1482200EBCBA7 /* Alamofire iOS Tests.xctest */,
-				1FE8A9F81FE1482200EBCBA7 /* Alamofire.framework */,
-				1FE8A9FA1FE1482200EBCBA7 /* Alamofire macOS Tests.xctest */,
-				1FE8A9FC1FE1482200EBCBA7 /* Alamofire.framework */,
-				1FE8A9FE1FE1482200EBCBA7 /* Alamofire tvOS Tests.xctest */,
-				1FE8AA001FE1482200EBCBA7 /* Alamofire.framework */,
+				A9AB89568A3707C5088E474F /* Pods_Re_Ceipt.framework */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D9679D91FE5222600BB9F02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D9679DA1FE5225D00BB9F02 /* User.swift */,
+				7D9679DC1FE5227500BB9F02 /* Spend.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F48FD2190E3117AE3BAD49A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCA28C843FBE11CC5ED54C89 /* Pods-Re-Ceipt.debug.xcconfig */,
+				EBBDD6945001A35ABAC10E73 /* Pods-Re-Ceipt.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,14 +123,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F97CAA01FD9401100336D3F /* Build configuration list for PBXNativeTarget "Re-Ceipt" */;
 			buildPhases = (
+				9C18AA6107854DC32CC9C50D /* [CP] Check Pods Manifest.lock */,
 				1F97CA8A1FD9401100336D3F /* Sources */,
 				1F97CA8B1FD9401100336D3F /* Frameworks */,
 				1F97CA8C1FD9401100336D3F /* Resources */,
+				578B108842F79D2CE08FAEE7 /* [CP] Embed Pods Frameworks */,
+				9F6FD3C93E56E8FF848C59ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1FE8AA021FE1486600EBCBA7 /* PBXTargetDependency */,
 			);
 			name = "Re-Ceipt";
 			productName = "Re-Ceipt";
@@ -198,70 +166,12 @@
 			mainGroup = 1F97CA851FD9401000336D3F;
 			productRefGroup = 1F97CA8F1FD9401100336D3F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1FE8A9E91FE1482200EBCBA7 /* Products */;
-					ProjectRef = 1FE8A9E81FE1482200EBCBA7 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1F97CA8D1FD9401100336D3F /* Re-Ceipt */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1FE8A9F41FE1482200EBCBA7 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 1FE8A9F31FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8A9F61FE1482200EBCBA7 /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = 1FE8A9F51FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8A9F81FE1482200EBCBA7 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 1FE8A9F71FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8A9FA1FE1482200EBCBA7 /* Alamofire macOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire macOS Tests.xctest";
-			remoteRef = 1FE8A9F91FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8A9FC1FE1482200EBCBA7 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 1FE8A9FB1FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8A9FE1FE1482200EBCBA7 /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = 1FE8A9FD1FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FE8AA001FE1482200EBCBA7 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 1FE8A9FF1FE1482200EBCBA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1F97CA8C1FD9401100336D3F /* Resources */ = {
@@ -276,26 +186,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		578B108842F79D2CE08FAEE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C18AA6107854DC32CC9C50D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Re-Ceipt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6FD3C93E56E8FF848C59ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F97CA8A1FD9401100336D3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */,
+				7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */,
+				7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */,
 				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,
+				7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1FE8AA021FE1486600EBCBA7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = 1FE8AA011FE1486600EBCBA7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F97CA951FD9401100336D3F /* Main.storyboard */ = {
@@ -426,6 +387,7 @@
 		};
 		1F97CAA11FD9401100336D3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCA28C843FBE11CC5ED54C89 /* Pods-Re-Ceipt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +404,7 @@
 		};
 		1F97CAA21FD9401100336D3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBDD6945001A35ABAC10E73 /* Pods-Re-Ceipt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -17,13 +17,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSignUp() {
         Communicator.signUp(self.view, username: idTextField.text!, password: pwTextField.text!) {
-
+            
         }
     }
 
     @IBAction func onSignIn() {
         Communicator.signIn(self.view, username: idTextField.text!, password: pwTextField.text!) {
-
+            self.performSegue(withIdentifier: "LoginSucessSegue", sender: self)
         }
     }
     
