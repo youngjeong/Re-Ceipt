@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
+
 
 class Communicator {
     static var serverURL: String = "http://127.0.0.1:8000/"
@@ -130,7 +132,7 @@ class Communicator {
         }
     }
     
-    static func getMySpend(_ parent: UIView, onSuccess: @escaping () -> Void) {
+    static func getMySpend(_ parent: UIView, onSuccess: @escaping ([Spend]) -> Void) {
         let api = "myspend/"
         let ind = showActivityIndicatory(parent: parent)
         
@@ -141,32 +143,17 @@ class Communicator {
             headers: headers
             )
             .validate()
-            .responseJSON { (response) -> Void in
-                if let json = response.result.value {
-                    print("JSON: \(json)") // serialized json response
-                }
-                
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("Data: \(utf8Text)") // original server data as UTF8 string
-                    
-                }
-                
-                
+            .responseArray { (response: DataResponse<[Spend]>) in
                 guard response.result.isSuccess else {
                     print("Error while fetching remote rooms: \(String(describing: response.result.error))")
                     onFail(parent, ind)
                     return
                 }
-                
-                guard let value = response.result.value as? [Dictionary<String, String>] else {
-                    print("Malformed data received from fetchAllRooms service")
-                    onFail(parent, ind)
-                    return
-                }
-                
-                print(value)
+            
                 stopActivityIndicatory(parent: parent, actInd: ind)
-                onSuccess()
+                if let spendArray = response.result.value {
+                    onSuccess(spendArray)
+                }
         }
     }
     

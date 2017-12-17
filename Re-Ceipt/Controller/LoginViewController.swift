@@ -13,17 +13,26 @@ class LoginViewController: UIViewController {
     @IBOutlet var idTextField: UITextField!
     @IBOutlet var pwTextField: UITextField!
     
-    var ind: UIActivityIndicatorView? = nil;
-    
     @IBAction func onSignUp() {
         Communicator.signUp(self.view, username: idTextField.text!, password: pwTextField.text!) {
-            
+
         }
     }
 
     @IBAction func onSignIn() {
         Communicator.signIn(self.view, username: idTextField.text!, password: pwTextField.text!) {
-            self.performSegue(withIdentifier: "LoginSucessSegue", sender: self)
+            Communicator.getMySpend(self.view) { spendList in
+                self.performSegue(withIdentifier: "LoginSuccessSegue", sender: spendList)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoginSuccessSegue" {
+            
+            let destinationController = segue.destination as! MySpendViewController
+            let spendList = sender as! [Spend]
+            destinationController.spendList = spendList
         }
     }
     

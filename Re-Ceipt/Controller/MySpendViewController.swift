@@ -8,17 +8,12 @@
 
 import UIKit
 
-class MySpendViewController: UITableViewController {
-
+class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var spendList: [Spend] = []
     
-    var result: [String:String] = [:]
     
     override func viewDidLoad() {
-        print("here")
         super.viewDidLoad()
-        Communicator.getMySpend(self.view){
-            
-        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,7 +21,7 @@ class MySpendViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,15 +29,24 @@ class MySpendViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
-        return 0
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return spendList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "SpendCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MySpendViewCell
+        cell.titleLabel.text = spendList[indexPath.row].title
+        cell.typeLabel.text = spendList[indexPath.row].type
+        cell.amountLabel.text = String(spendList[indexPath.row].amount!)
+        return cell
     }
 
     /*

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6DF7F61FE6731F008958C9 /* MySpendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */; };
 		1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA911FD9401100336D3F /* AppDelegate.swift */; };
 		1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* LoginViewController.swift */; };
 		1F97CA971FD9401100336D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA951FD9401100336D3F /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpendViewCell.swift; sourceTree = "<group>"; };
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F97CA911FD9401100336D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F97CA931FD9401100336D3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F6DF7F41FE672F3008958C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1F97CA851FD9401000336D3F = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		1F97CA901FD9401100336D3F /* Re-Ceipt */ = {
 			isa = PBXGroup;
 			children = (
+				1F6DF7F41FE672F3008958C9 /* View */,
 				7D9679D91FE5222600BB9F02 /* Model */,
 				1F97CAA31FDD059B00336D3F /* Controller */,
 				1F97CA911FD9401100336D3F /* AppDelegate.swift */,
@@ -195,11 +206,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Re-Ceipt/Pods-Re-Ceipt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +266,7 @@
 				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,
 				7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,
+				1F6DF7F61FE6731F008958C9 /* MySpendViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

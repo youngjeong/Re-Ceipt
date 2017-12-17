@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Spend: Mappable {
     var pk: Int?
-    var author: String?
+    var author: User?
     var created: String?
     var modified: String?
     var title: String?
@@ -25,7 +25,7 @@ class Spend: Mappable {
     
     func mapping(map: Map) {
         pk <- map["pk"]
-        author <- map["author.username"]
+        author <- map["author"]
         created <- map["created"]
         modified <- map["modified"]
         title <- map["title"]
