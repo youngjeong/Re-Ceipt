@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Floaty
 
 class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userLabel: UILabel!
@@ -14,10 +15,29 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var spendList: [Spend] = []
     
+    let floaty = Floaty()
+    
+    fileprivate func AddFloaty() {
+        let showGraphItem = FloatyItem()
+        showGraphItem.icon = UIImage(named: "graph")!
+        showGraphItem.title = "그래프 보기"
+        
+        let uploadItem = FloatyItem()
+        uploadItem.icon = UIImage(named: "share")!
+        uploadItem.title = "내역 올리기"
+        
+        
+        floaty.addItem(item: showGraphItem)
+        floaty.addItem(item: uploadItem)
+        
+        floaty.paddingY = 100
+        self.view.addSubview(floaty)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AddFloaty()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
