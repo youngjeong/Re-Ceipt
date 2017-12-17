@@ -9,7 +9,16 @@
 import UIKit
 import Floaty
 
-class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview")
+        return previewView
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+    
+    }
+    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
@@ -37,6 +46,15 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available
+        {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        else
+        {
+            print("NOT AVAILABLE 3D TOUCH")
+        }
+        
         AddFloaty()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,6 +76,23 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         let spendAmount = currencyFormatter.string(from: NSNumber(value: amount))!
         amountLabel.text = spendAmount
     }
+    
+    func addMenuItems(menu:String ...) -> [UIPreviewActionItem] {
+        var arrPreview = [UIPreviewActionItem]()
+        for m in menu {
+            let likeAction = UIPreviewAction(title:m, style: .default) { (action, viewController) -> Void in
+                print(action.title)
+            }
+            arrPreview.append(likeAction)
+        }
+        return arrPreview
+    }
+    
+    // Add Action of preview
+    override var previewActionItems: [UIPreviewActionItem] {
+        return self.addMenuItems(menu: "Open","Bookmark")
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
