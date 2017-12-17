@@ -11,7 +11,7 @@ import UIKit
 class MySpendViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
-    @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

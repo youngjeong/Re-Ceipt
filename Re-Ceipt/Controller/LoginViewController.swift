@@ -29,10 +29,10 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginSuccessSegue" {
-            
-            let destinationController = segue.destination as! MySpendViewController
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let targetController = destinationNavigationController.topViewController as! MySpendViewController
             let spendList = sender as! [Spend]
-            destinationController.spendList = spendList
+            targetController.spendList = spendList
         }
     }
     

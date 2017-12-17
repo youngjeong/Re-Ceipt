@@ -9,6 +9,9 @@
 import UIKit
 
 class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    
     var spendList: [Spend] = []
     
     
@@ -20,6 +23,20 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        var amount = 0
+        for spend in spendList {
+            amount += spend.amount!
+        }
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.init(identifier: "ko_KR")
+        let spendAmount = currencyFormatter.string(from: NSNumber(value: amount))!
+        amountLabel.text = spendAmount
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,8 +61,20 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cellIdentifier = "SpendCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MySpendViewCell
         cell.titleLabel.text = spendList[indexPath.row].title
-        cell.typeLabel.text = spendList[indexPath.row].type
-        cell.amountLabel.text = String(spendList[indexPath.row].amount!)
+        let date = spendList[indexPath.row].created!
+        let index = date.index(date.startIndex, offsetBy: 16)
+        let substr = String(date[..<index])
+        cell.dateLabel.text = substr.replacingOccurrences(of: "T", with: " ")
+        
+        
+        let amount = NSNumber(value: spendList[indexPath.row].amount!)
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.init(identifier: "ko_KR")
+        cell.amountLabel.text = currencyFormatter.string(from: amount)
+        
         return cell
     }
 
