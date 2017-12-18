@@ -36,7 +36,9 @@ class AddSpend2ViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton)
     {
-        
+        Communicator.addSpend(self.view, title: date, type: sender.currentTitle!, amount: Int(amount)!){
+            print("Success")
+        }
     }
     /*
     // MARK: - Navigation
