@@ -7,4 +7,5 @@ target 'Re-Ceipt' do
     pod 'Floaty', '~> 4.0.0'
     pod 'AlamofireImage', '~> 3.3'
     pod 'EFCountingLabel'
+    pod 'Charts'
 end
