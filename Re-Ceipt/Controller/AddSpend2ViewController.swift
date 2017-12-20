@@ -41,8 +41,7 @@ class AddSpend2ViewController: UIViewController {
             Communicator.addSpend(self.view, title: title, type: sender.currentTitle!, date: date, amount: Int(amount)!){
                 print("Success")
                 
-                self.navigationController?.dismiss(animated: true, completion: nil)
-
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
