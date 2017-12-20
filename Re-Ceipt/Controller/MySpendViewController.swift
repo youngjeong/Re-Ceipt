@@ -52,10 +52,17 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         performSegue(withIdentifier: "UploadSegue", sender: nil)
     }
     
+    func onChartView(_ item: FloatyItem) {
+        performSegue(withIdentifier: "ChartSegue", sender: nil)
+    }
+    
     fileprivate func AddFloaty() {
         let showGraphItem = FloatyItem()
         showGraphItem.icon = UIImage(named: "graph")!
         showGraphItem.title = "그래프 보기"
+        
+        showGraphItem.handler = onChartView
+        
         
         let uploadItem = FloatyItem()
         uploadItem.icon = UIImage(named: "share")!
@@ -227,7 +234,10 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if segue.identifier == "UploadSegue" {
             let postUploadViewController = segue.destination as! PostUploadViewController
             postUploadViewController.spendList = self.spendList
-        } else {
+        } else if segue.identifier == "ChartSegue" {
+            let spendChartViewController = segue.destination as! SpendChartViewController
+            spendChartViewController.spendList = self.spendList
+        }else {
             let elseViewController = segue.destination as! AddSpendViewController
             elseViewController.delegate = self
         }

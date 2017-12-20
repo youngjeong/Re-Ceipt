@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -512,11 +512,90 @@
                         <outlet property="tableView" destination="iid-T6-kYI" id="4L4-cx-Czu"/>
                         <outlet property="userLabel" destination="0IY-rz-ChQ" id="XW9-5I-b1L"/>
                         <segue destination="qHT-Yc-8Yo" kind="show" identifier="UploadSegue" id="6iW-Bc-yer"/>
+                        <segue destination="Ao7-iZ-J6l" kind="show" identifier="ChartSegue" id="ewI-vu-5sO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ak-5H-JKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2530" y="-226"/>
+        </scene>
+        <!--차트-->
+        <scene sceneID="VAx-aT-dOf">
+            <objects>
+                <viewController title="차트" id="Ao7-iZ-J6l" userLabel="차트" customClass="SpendChartViewController" customModule="Re_Ceipt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G0S-1z-KrO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="RIF-3e-0g8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K1f-Ih-6z3">
+                                        <rect key="frame" x="63" y="31" width="249" height="138"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-a0-HL5">
+                                                <rect key="frame" x="112" y="0.0" width="25" height="30"/>
+                                                <color key="backgroundColor" red="0.77992439270000002" green="0.94392359260000003" blue="0.81186991929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="onFromClicked" destination="qHT-Yc-8Yo" eventType="touchUpInside" id="Gas-wn-cJx"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2K-Aa-3xB">
+                                                <rect key="frame" x="112" y="45" width="25" height="30"/>
+                                                <color key="backgroundColor" red="0.77992439270000002" green="0.94392359260000003" blue="0.81186991929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="onToClicked" destination="qHT-Yc-8Yo" eventType="touchUpInside" id="cIR-t0-Jva"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AmountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIF-RS-Ta1" customClass="EFCountingLabel" customModule="EFCountingLabel">
+                                                <rect key="frame" x="0.0" y="90" width="249" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.77992439270000002" green="0.94392359260000003" blue="0.81186991929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="34k-sb-Pm4"/>
+                                    <constraint firstItem="K1f-Ih-6z3" firstAttribute="centerY" secondItem="RIF-3e-0g8" secondAttribute="centerY" id="6ZU-tQ-dFn"/>
+                                    <constraint firstItem="K1f-Ih-6z3" firstAttribute="centerX" secondItem="RIF-3e-0g8" secondAttribute="centerX" id="gvq-ds-QWl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXB-Z6-ctO" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="264" width="375" height="354"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I43-A2-esP" firstAttribute="trailing" secondItem="MXB-Z6-ctO" secondAttribute="trailing" id="7D0-aU-dp5"/>
+                            <constraint firstItem="I43-A2-esP" firstAttribute="bottom" secondItem="MXB-Z6-ctO" secondAttribute="bottom" id="8HS-PZ-6Hh"/>
+                            <constraint firstItem="RIF-3e-0g8" firstAttribute="top" secondItem="I43-A2-esP" secondAttribute="top" id="8qG-s4-BDm"/>
+                            <constraint firstItem="MXB-Z6-ctO" firstAttribute="leading" secondItem="I43-A2-esP" secondAttribute="leading" id="9Me-Vo-p9X"/>
+                            <constraint firstItem="RIF-3e-0g8" firstAttribute="trailing" secondItem="I43-A2-esP" secondAttribute="trailing" id="cku-h1-0Ig"/>
+                            <constraint firstItem="RIF-3e-0g8" firstAttribute="leading" secondItem="I43-A2-esP" secondAttribute="leading" id="jsw-Bt-2Qd"/>
+                            <constraint firstItem="MXB-Z6-ctO" firstAttribute="top" secondItem="RIF-3e-0g8" secondAttribute="bottom" id="um8-Jf-3Oz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I43-A2-esP"/>
+                    </view>
+                    <connections>
+                        <outlet property="EndDateField" destination="s2K-Aa-3xB" id="kXx-JW-TCN"/>
+                        <outlet property="StartDateField" destination="IUy-a0-HL5" id="NPu-5z-rIh"/>
+                        <outlet property="amountLabel" destination="FIF-RS-Ta1" id="We6-Tq-UYB"/>
+                        <outlet property="pieChart" destination="MXB-Z6-ctO" id="qJa-pE-WW7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnC-Pq-nD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="-992"/>
         </scene>
         <!--Preview-->
         <scene sceneID="bxX-MI-V4w">
@@ -601,7 +680,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9zN-ng-oXm">
-                                            <rect key="frame" x="46" y="88" width="313" height="21"/>
+                                            <rect key="frame" x="54" y="90.5" width="313" height="21"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Ney-dd-HDe">
                                                     <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
@@ -740,7 +819,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fCV-tU-eK8">
-                                            <rect key="frame" x="46" y="88" width="313" height="21"/>
+                                            <rect key="frame" x="54" y="90.5" width="313" height="21"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-Wo-HIy">
                                                     <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
