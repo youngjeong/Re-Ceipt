@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+import AlamofireImage
 
 
 class Communicator {
@@ -204,6 +205,31 @@ class Communicator {
                 stopActivityIndicatory(parent: parent, actInd: ind)
                 if let postList = response.result.value {
                     onSuccess(postList)
+                }
+        }
+    }
+    
+    
+    static func getImage(_ parent: UIView, onSuccess: @escaping (UIImage) -> Void) {
+        let api = "image/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseImage { response in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                if let image = response.result.value {
+                    onSuccess(image)
                 }
         }
     }

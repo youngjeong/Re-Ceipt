@@ -5,4 +5,5 @@ target 'Re-Ceipt' do
     pod 'ObjectMapper', '~> 3.1.0'
     pod 'AlamofireObjectMapper', '~> 5.0'
     pod 'Floaty', '~> 4.0.0'
+    pod 'AlamofireImage', '~> 3.3'
 end
