@@ -20,6 +20,8 @@
 		1F97CA9C1FD9401100336D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */; };
 		1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */; };
 		500800ABE3EA6702C5E85551 /* Pods_Re_Ceipt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9AB89568A3707C5088E474F /* Pods_Re_Ceipt.framework */; };
+		7D876EA61FE7D356006AF6DB /* AddSpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */; };
+		7D876EA81FE834EE006AF6DB /* AddSpend2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */; };
 		7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */; };
 		7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DA1FE5225D00BB9F02 /* User.swift */; };
 		7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DC1FE5227500BB9F02 /* Spend.swift */; };
@@ -40,6 +42,8 @@
 		1F97CA9B1FD9401100336D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F97CA9D1FD9401100336D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendViewController.swift; sourceTree = "<group>"; };
+		7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpend2ViewController.swift; sourceTree = "<group>"; };
 		7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpendViewController.swift; sourceTree = "<group>"; };
 		7D9679DA1FE5225D00BB9F02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D9679DC1FE5227500BB9F02 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */,
 				1F8906121FEA21C7005E1287 /* PostTableViewController.swift */,
 				1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */,
+				7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */,
+				7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			files = (
 				1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */,
 				1F89061B1FEA85F3005E1287 /* PostDetailViewController.swift in Sources */,
+				7D876EA61FE7D356006AF6DB /* AddSpendViewController.swift in Sources */,
 				7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */,
 				7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */,
 				1F8906131FEA21C7005E1287 /* PostTableViewController.swift in Sources */,
@@ -307,6 +314,7 @@
 				1F8906111FEA1198005E1287 /* Post.swift in Sources */,
 				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,
 				7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */,
+				7D876EA81FE834EE006AF6DB /* AddSpend2ViewController.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,
 				1F6DF7F61FE6731F008958C9 /* MySpendViewCell.swift in Sources */,
 			);
