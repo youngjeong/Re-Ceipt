@@ -27,6 +27,7 @@
 		500800ABE3EA6702C5E85551 /* Pods_Re_Ceipt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9AB89568A3707C5088E474F /* Pods_Re_Ceipt.framework */; };
 		7D876EA61FE7D356006AF6DB /* AddSpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */; };
 		7D876EA81FE834EE006AF6DB /* AddSpend2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */; };
+		7D90F3E91FEAE5E000D049ED /* SpendChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D90F3E81FEAE5E000D049ED /* SpendChartViewController.swift */; };
 		7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */; };
 		7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DA1FE5225D00BB9F02 /* User.swift */; };
 		7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9679DC1FE5227500BB9F02 /* Spend.swift */; };
@@ -54,6 +55,7 @@
 		1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 		7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendViewController.swift; sourceTree = "<group>"; };
 		7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpend2ViewController.swift; sourceTree = "<group>"; };
+		7D90F3E81FEAE5E000D049ED /* SpendChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendChartViewController.swift; sourceTree = "<group>"; };
 		7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpendViewController.swift; sourceTree = "<group>"; };
 		7D9679DA1FE5225D00BB9F02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D9679DC1FE5227500BB9F02 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */,
 				1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */,
 				1F8906231FEAD820005E1287 /* PostUploadViewController.swift */,
+				7D90F3E81FEAE5E000D049ED /* SpendChartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/EFCountingLabel/EFCountingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -277,6 +281,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFCountingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -326,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D90F3E91FEAE5E000D049ED /* SpendChartViewController.swift in Sources */,
 				1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */,
 				1F89061B1FEA85F3005E1287 /* PostDetailViewController.swift in Sources */,
 				7D876EA61FE7D356006AF6DB /* AddSpendViewController.swift in Sources */,
