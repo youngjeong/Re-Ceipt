@@ -12,14 +12,12 @@ import UIKit
 class PostTableViewController: UITableViewController {
     @IBInspectable open var type: Int = 0
     
-    var postList: [Post] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var postList: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,17 +26,36 @@ class PostTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    @objc func didPullToRefresh() {
+        if type == 0 {
+            Communicator.getPostList(self.view) { postList in
+                self.postList = postList
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }
+        else {
+            Communicator.getMyPostList(self.view) { postList in
+                self.postList = postList
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if type == 0 {
             Communicator.getPostList(self.view) { postList in
                 self.postList = postList
+                self.tableView.reloadData()
             }
         }
         else {
             Communicator.getMyPostList(self.view) { postList in
                 self.postList = postList
+                self.tableView.reloadData()
             }
         }
     }

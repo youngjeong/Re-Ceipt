@@ -24,11 +24,9 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var amountLabel: EFCountingLabel!
     
-    var spendList: [Spend] = [] {
-        didSet {
-            tableView?.reloadData()
-        }
-    }
+    var refreshControl = UIRefreshControl()
+    
+    var spendList: [Spend] = []
     
     let floaty = Floaty()
     
@@ -49,8 +47,21 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.addSubview(floaty)
     }
     
+    @objc func didPullToRefresh() {
+        Communicator.getMySpend(self.view) { spendList in
+            self.spendList = spendList
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        
+        tableView.addSubview(refreshControl)
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal

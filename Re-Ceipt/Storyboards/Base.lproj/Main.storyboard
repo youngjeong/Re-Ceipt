@@ -434,6 +434,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="뉴스피드" id="EEC-Lf-WIH"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rVX-dY-BrY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="type">
                             <integer key="value" value="0"/>
@@ -568,6 +572,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="내목록" id="GgR-WQ-ORL"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="bq8-i3-b3C">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="type">
                             <integer key="value" value="1"/>
@@ -790,6 +798,6 @@
         <image name="share" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GrJ-72-fIR"/>
+        <segue reference="X2c-Mv-o1E"/>
     </inferredMetricsTieBreakers>
 </document>
