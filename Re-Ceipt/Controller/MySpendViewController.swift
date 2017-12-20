@@ -19,10 +19,15 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     }
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
-    var spendList: [Spend] = []
+    var spendList: [Spend] = [] {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     
     let floaty = Floaty()
     

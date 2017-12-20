@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1F6DF7F61FE6731F008958C9 /* MySpendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */; };
+		1F8906111FEA1198005E1287 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906101FEA1198005E1287 /* Post.swift */; };
+		1F8906131FEA21C7005E1287 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906121FEA21C7005E1287 /* PostTableViewController.swift */; };
+		1F8906151FEA2275005E1287 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906141FEA2275005E1287 /* PostViewCell.swift */; };
+		1F8906181FEA2859005E1287 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906171FEA2859005E1287 /* UIColor+Ext.swift */; };
 		1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA911FD9401100336D3F /* AppDelegate.swift */; };
 		1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* LoginViewController.swift */; };
 		1F97CA971FD9401100336D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA951FD9401100336D3F /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpendViewCell.swift; sourceTree = "<group>"; };
+		1F8906101FEA1198005E1287 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		1F8906121FEA21C7005E1287 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		1F8906141FEA2275005E1287 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		1F8906171FEA2859005E1287 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F97CA911FD9401100336D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F97CA931FD9401100336D3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +62,26 @@
 			isa = PBXGroup;
 			children = (
 				1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */,
+				1F8906141FEA2275005E1287 /* PostViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1F8906161FEA2841005E1287 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				1F8906171FEA2859005E1287 /* UIColor+Ext.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		1F8906191FEA35BB005E1287 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1F97CA951FD9401100336D3F /* Main.storyboard */,
+				1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		1F97CA851FD9401000336D3F = {
@@ -79,13 +105,13 @@
 		1F97CA901FD9401100336D3F /* Re-Ceipt */ = {
 			isa = PBXGroup;
 			children = (
+				1F8906191FEA35BB005E1287 /* Storyboards */,
+				1F8906161FEA2841005E1287 /* Extentions */,
 				1F6DF7F41FE672F3008958C9 /* View */,
 				7D9679D91FE5222600BB9F02 /* Model */,
 				1F97CAA31FDD059B00336D3F /* Controller */,
 				1F97CA911FD9401100336D3F /* AppDelegate.swift */,
-				1F97CA951FD9401100336D3F /* Main.storyboard */,
 				1F97CA981FD9401100336D3F /* Assets.xcassets */,
-				1F97CA9A1FD9401100336D3F /* LaunchScreen.storyboard */,
 				1F97CA9D1FD9401100336D3F /* Info.plist */,
 			);
 			path = "Re-Ceipt";
@@ -97,6 +123,7 @@
 				1F97CA931FD9401100336D3F /* LoginViewController.swift */,
 				1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */,
 				7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */,
+				1F8906121FEA21C7005E1287 /* PostTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +141,7 @@
 			children = (
 				7D9679DA1FE5225D00BB9F02 /* User.swift */,
 				7D9679DC1FE5227500BB9F02 /* Spend.swift */,
+				1F8906101FEA1198005E1287 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +293,10 @@
 				1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */,
 				7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */,
 				7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */,
+				1F8906131FEA21C7005E1287 /* PostTableViewController.swift in Sources */,
+				1F8906181FEA2859005E1287 /* UIColor+Ext.swift in Sources */,
+				1F8906151FEA2275005E1287 /* PostViewCell.swift in Sources */,
+				1F8906111FEA1198005E1287 /* Post.swift in Sources */,
 				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,
 				7D9679DB1FE5225D00BB9F02 /* User.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,

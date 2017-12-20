@@ -151,13 +151,62 @@ class Communicator {
                 }
             
                 stopActivityIndicatory(parent: parent, actInd: ind)
-                if let spendArray = response.result.value {
-                    onSuccess(spendArray)
+                if let spendList = response.result.value {
+                    onSuccess(spendList)
                 }
         }
     }
     
     
+    static func getPostList(_ parent: UIView, onSuccess: @escaping ([Post]) -> Void) {
+        let api = "post/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseArray { (response: DataResponse<[Post]>) in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                if let postList = response.result.value {
+                    onSuccess(postList)
+                }
+        }
+    }
+    
+    static func getMyPostList(_ parent: UIView, onSuccess: @escaping ([Post]) -> Void) {
+        let api = "mypost/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseArray { (response: DataResponse<[Post]>) in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                if let postList = response.result.value {
+                    onSuccess(postList)
+                }
+        }
+    }
     
     static func onFail(_ parent: UIView, _ ind: UIActivityIndicatorView) {
         stopActivityIndicatory(parent: parent, actInd: ind)
