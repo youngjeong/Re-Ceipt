@@ -42,6 +42,15 @@ class PostTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! PostDetailViewController
+                destinationController.post = postList[indexPath.row]
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,7 +91,7 @@ class PostTableViewController: UITableViewController {
 
         return cell
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

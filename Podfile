@@ -6,4 +6,5 @@ target 'Re-Ceipt' do
     pod 'AlamofireObjectMapper', '~> 5.0'
     pod 'Floaty', '~> 4.0.0'
     pod 'AlamofireImage', '~> 3.3'
+    pod 'EFCountingLabel'
 end
