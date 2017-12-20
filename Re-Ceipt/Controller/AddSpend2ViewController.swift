@@ -11,6 +11,7 @@ import UIKit
 class AddSpend2ViewController: UIViewController {
     @IBOutlet weak var review_field: UILabel!
     @IBOutlet var Buttons: Array<UIButton>?
+    @IBOutlet weak var title_field: UITextField!
     
     var amount: String = ""
     var date: String = ""
@@ -36,8 +37,13 @@ class AddSpend2ViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton)
     {
-        Communicator.addSpend(self.view, title: date, type: sender.currentTitle!, amount: Int(amount)!){
-            print("Success")
+        if let title = title_field.text{
+            Communicator.addSpend(self.view, title: title, type: sender.currentTitle!, date: date, amount: Int(amount)!){
+                print("Success")
+                
+                self.navigationController?.dismiss(animated: true, completion: nil)
+
+            }
         }
     }
     /*

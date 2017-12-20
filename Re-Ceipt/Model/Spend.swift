@@ -14,6 +14,7 @@ class Spend: Mappable {
     var author: User?
     var created: String?
     var modified: String?
+    var date: String?
     var title: String?
     var type: String?
     var amount: Int?
@@ -28,6 +29,7 @@ class Spend: Mappable {
         author <- map["author"]
         created <- map["created"]
         modified <- map["modified"]
+        date <- map["date"]
         title <- map["title"]
         type <- map["type"]
         amount <- map["amount"]

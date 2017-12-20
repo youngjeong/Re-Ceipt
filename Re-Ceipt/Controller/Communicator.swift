@@ -102,14 +102,14 @@ class Communicator {
     }
     
     
-    static func addSpend(_ parent: UIView, title: String, type: String, amount: Int, onSuccess: @escaping () -> Void) {
+    static func addSpend(_ parent: UIView, title: String, type: String, date: String, amount: Int, onSuccess: @escaping () -> Void) {
         let api = "spend/"
         let ind = showActivityIndicatory(parent: parent)
         
         Alamofire.request(
             URL(string: serverURL + api)!,
             method: .post,
-            parameters: ["title": title, "type": type, "amount": amount],
+            parameters: ["title": title, "type": type, "date": date, "amount": amount],
             encoding: JSONEncoding.default,
             headers: headers
             )

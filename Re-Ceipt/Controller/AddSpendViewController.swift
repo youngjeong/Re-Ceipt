@@ -22,7 +22,7 @@ class AddSpendViewController: UIViewController {
             let today_date = Date()
             let formatter = DateFormatter()
             
-            formatter.dateFormat = "yyyy / MM / dd"
+            formatter.dateFormat = "yyyy-MM-dd"
             
             let result = formatter.string(from: today_date)
             date_field.text = result
@@ -52,7 +52,7 @@ class AddSpendViewController: UIViewController {
     func datePickerValueChanged(sender: UIDatePicker){
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "yyyy / MM / dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         
         let result = formatter.string(from: sender.date)
         date_field.text = result

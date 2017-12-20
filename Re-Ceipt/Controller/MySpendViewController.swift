@@ -116,10 +116,8 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cellIdentifier = "SpendCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MySpendViewCell
         cell.titleLabel.text = spendList[indexPath.row].title
-        let date = spendList[indexPath.row].created!
-        let index = date.index(date.startIndex, offsetBy: 16)
-        let substr = String(date[..<index])
-        cell.dateLabel.text = substr.replacingOccurrences(of: "T", with: " ")
+        let date = spendList[indexPath.row].date!
+        cell.dateLabel.text = date
         
         
         let amount = NSNumber(value: spendList[indexPath.row].amount!)
