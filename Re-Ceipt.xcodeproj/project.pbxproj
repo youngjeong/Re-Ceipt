@@ -15,6 +15,7 @@
 		1F89061B1FEA85F3005E1287 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */; };
 		1F89061D1FEAC681005E1287 /* SpendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061C1FEAC681005E1287 /* SpendViewCell.swift */; };
 		1F89061F1FEACDC2005E1287 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */; };
+		1F8906221FEAD3D9005E1287 /* TopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906211FEAD3D9005E1287 /* TopViewControllerDelegate.swift */; };
 		1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA911FD9401100336D3F /* AppDelegate.swift */; };
 		1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* LoginViewController.swift */; };
 		1F97CA971FD9401100336D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA951FD9401100336D3F /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		1F89061C1FEAC681005E1287 /* SpendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendViewCell.swift; sourceTree = "<group>"; };
 		1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		1F8906211FEAD3D9005E1287 /* TopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F97CA911FD9401100336D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F97CA931FD9401100336D3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		1F8906201FEAD3C6005E1287 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1F8906211FEAD3D9005E1287 /* TopViewControllerDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		1F97CA851FD9401000336D3F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		1F97CA901FD9401100336D3F /* Re-Ceipt */ = {
 			isa = PBXGroup;
 			children = (
+				1F8906201FEAD3C6005E1287 /* Protocol */,
 				1F8906191FEA35BB005E1287 /* Storyboards */,
 				1F8906161FEA2841005E1287 /* Extentions */,
 				1F6DF7F41FE672F3008958C9 /* View */,
@@ -324,6 +335,7 @@
 				7D876EA81FE834EE006AF6DB /* AddSpend2ViewController.swift in Sources */,
 				1F89061D1FEAC681005E1287 /* SpendViewCell.swift in Sources */,
 				1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */,
+				1F8906221FEAD3D9005E1287 /* TopViewControllerDelegate.swift in Sources */,
 				1F6DF7F61FE6731F008958C9 /* MySpendViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

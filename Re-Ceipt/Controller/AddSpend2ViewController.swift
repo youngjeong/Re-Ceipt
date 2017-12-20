@@ -13,6 +13,8 @@ class AddSpend2ViewController: UIViewController {
     @IBOutlet var Buttons: Array<UIButton>?
     @IBOutlet weak var title_field: UITextField!
     
+    var delegate: TopViewControllerProtocol!
+    
     var amount: String = ""
     var date: String = ""
     
@@ -42,6 +44,7 @@ class AddSpend2ViewController: UIViewController {
                 print("Success")
                 
                 self.navigationController?.popToRootViewController(animated: true)
+                self.delegate.dismissViewController()
             }
         }
     }

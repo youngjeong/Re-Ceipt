@@ -10,7 +10,24 @@ import UIKit
 import Floaty
 import EFCountingLabel
 
-class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, TopViewControllerProtocol {
+    func dismissViewController() {
+        Communicator.getMySpend(self.view) { spendList in
+            self.spendList = spendList
+            self.updateAmount()
+        }
+    }
+    
+    func updateAmount()
+    {
+        var amount = 0
+        for spend in spendList {
+            amount += spend.amount!
+        }
+        
+        amountLabel.countFrom(0, to: CGFloat(amount))
+    }
+    
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! PreviewViewController
         previewView.imagePath = "dislike"
@@ -91,12 +108,7 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        var amount = 0
-        for spend in spendList {
-            amount += spend.amount!
-        }
-        
-        amountLabel.countFrom(0, to: CGFloat(amount))
+        updateAmount()
     }
     
     func addMenuItems(menu:String ...) -> [UIPreviewActionItem] {
@@ -208,7 +220,9 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
             let previewViewController = segue.destination as! PreviewViewController
             previewViewController.imagePath = "like"
         }
+        else {
+            let elseViewController = segue.destination as! AddSpendViewController
+            elseViewController.delegate = self
+        }
     }
-    
-
 }

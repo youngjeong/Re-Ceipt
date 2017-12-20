@@ -15,6 +15,7 @@ class AddSpendViewController: UIViewController {
     @IBOutlet var amount_field: UITextField!
     @IBOutlet var next_button: UIButton!
     
+    var delegate: TopViewControllerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class AddSpendViewController: UIViewController {
     
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)
+        self.delegate.dismissViewController()
     }
     
     @objc
@@ -63,6 +65,7 @@ class AddSpendViewController: UIViewController {
             let target_controller = segue.destination as! AddSpend2ViewController
             target_controller.amount = amount_field.text!
             target_controller.date = date_field.text!
+            target_controller.delegate = self.delegate
         }
     }
    
