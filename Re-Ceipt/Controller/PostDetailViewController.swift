@@ -8,6 +8,7 @@
 
 import UIKit
 import Floaty
+import EFCountingLabel
 
 class PostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -21,7 +22,7 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var amountLabel: EFCountingLabel!
     
     var post: Post? = nil {
         didSet {
@@ -51,6 +52,15 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        amountLabel.method = .easeInOut
+        amountLabel.formatBlock = {
+            (value) in
+            return "₩ " + (formatter.string(from: NSNumber(value: Int(value))) ?? "")
+        }
+        
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
         {
             registerForPreviewing(with: self, sourceView: view)
@@ -74,12 +84,7 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             amount += spend.amount!
         }
         
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.init(identifier: "ko_KR")
-        let spendAmount = currencyFormatter.string(from: NSNumber(value: amount))!
-        amountLabel.text = spendAmount
+        amountLabel.countFrom(0, to: CGFloat(amount))
     }
     
     func addMenuItems(menu:String ...) -> [UIPreviewActionItem] {
@@ -120,12 +125,10 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let spendList = post!.spend_list!
         let cellIdentifier = "SpendCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MySpendViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SpendViewCell
         cell.titleLabel.text = spendList[indexPath.row].title
-        let date = spendList[indexPath.row].created!
-        let index = date.index(date.startIndex, offsetBy: 16)
-        let substr = String(date[..<index])
-        cell.dateLabel.text = substr.replacingOccurrences(of: "T", with: " ")
+        let date = spendList[indexPath.row].date!
+        cell.dateLabel.text = date
         
         
         let amount = NSNumber(value: spendList[indexPath.row].amount!)
@@ -184,15 +187,15 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "PreviewSegue" {
+            let previewViewController = segue.destination as! PreviewViewController
+            previewViewController.imagePath = "like"
+        }
+    }
     
 }
 

@@ -12,7 +12,8 @@ import EFCountingLabel
 
 class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview")
+        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! PreviewViewController
+        previewView.imagePath = "dislike"
         return previewView
     }
     
@@ -196,14 +197,18 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "PreviewSegue" {
+            let previewViewController = segue.destination as! PreviewViewController
+            previewViewController.imagePath = "like"
+        }
     }
-    */
+    
 
 }

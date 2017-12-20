@@ -45,7 +45,7 @@ class AddSpendViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc
