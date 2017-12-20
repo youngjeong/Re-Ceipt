@@ -20,22 +20,22 @@ class AddSpendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            let today_date = Date()
-            let formatter = DateFormatter()
-            
-            formatter.dateFormat = "yyyy-MM-dd"
-            
-            let result = formatter.string(from: today_date)
-            date_field.text = result
-            
-            let datePicker = UIDatePicker()
-            datePicker.datePickerMode = UIDatePickerMode.date
-            datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
-            
-            date_field.inputView = datePicker
-            
-            
-            self.amount_field.keyboardType = UIKeyboardType.decimalPad
+        let today_date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let result = formatter.string(from: today_date)
+        date_field.text = result
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        
+        date_field.inputView = datePicker
+        
+        
+        self.amount_field.keyboardType = UIKeyboardType.decimalPad
   
         // Do any additional setup after loading the view.
     }
