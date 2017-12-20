@@ -91,9 +91,8 @@ class PostTableViewController: UITableViewController {
 
         cell.titleLabel.text = postList[indexPath.row].title
         let date = postList[indexPath.row].created!
-        let index = date.index(date.startIndex, offsetBy: 16)
-        let substr = String(date[..<index])
-        cell.dateLabel.text = substr.replacingOccurrences(of: "T", with: " ")
+        let index = date.index(date.startIndex, offsetBy: 10)
+        cell.dateLabel.text = String(date[..<index])
         
         var amount = 0
         for spend in postList[indexPath.row].spend_list! {

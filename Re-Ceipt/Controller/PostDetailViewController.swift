@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Floaty
 import EFCountingLabel
 
 class PostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
@@ -30,25 +29,6 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    let floaty = Floaty()
-    
-    fileprivate func AddFloaty() {
-        let showGraphItem = FloatyItem()
-        showGraphItem.icon = UIImage(named: "graph")!
-        showGraphItem.title = "그래프 보기"
-        
-        let uploadItem = FloatyItem()
-        uploadItem.icon = UIImage(named: "share")!
-        uploadItem.title = "내역 올리기"
-        
-        
-        floaty.addItem(item: showGraphItem)
-        floaty.addItem(item: uploadItem)
-        
-        floaty.paddingY = 100
-        self.view.addSubview(floaty)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,8 +49,6 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         {
             print("NOT AVAILABLE 3D TOUCH")
         }
-        
-        AddFloaty()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -86,23 +64,6 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         amountLabel.countFrom(0, to: CGFloat(amount))
     }
-    
-    func addMenuItems(menu:String ...) -> [UIPreviewActionItem] {
-        var arrPreview = [UIPreviewActionItem]()
-        for m in menu {
-            let likeAction = UIPreviewAction(title:m, style: .default) { (action, viewController) -> Void in
-                print(action.title)
-            }
-            arrPreview.append(likeAction)
-        }
-        return arrPreview
-    }
-    
-    // Add Action of preview
-    override var previewActionItems: [UIPreviewActionItem] {
-        return self.addMenuItems(menu: "Open","Bookmark")
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

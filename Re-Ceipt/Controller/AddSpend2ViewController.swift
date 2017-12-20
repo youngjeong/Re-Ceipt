@@ -20,6 +20,7 @@ class AddSpend2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
 
         review_field.numberOfLines=0
         review_field.text = "\(date) 에\n\(amount) 원을 입력합니다.\n카테고리를 선택하세요."

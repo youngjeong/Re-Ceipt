@@ -1095,9 +1095,6 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="onFromClicked" destination="qHT-Yc-8Yo" eventType="touchUpInside" id="oXV-Cq-7fW"/>
-                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-i2-3hm">
                                                         <rect key="frame" x="112" y="45" width="25" height="30"/>
@@ -1105,9 +1102,6 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="onToClicked" destination="qHT-Yc-8Yo" eventType="touchUpInside" id="ucD-SK-GX6"/>
-                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AmountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUq-Mp-e2j" customClass="EFCountingLabel" customModule="EFCountingLabel">
                                                         <rect key="frame" x="0.0" y="90" width="249" height="48"/>
@@ -1188,7 +1182,11 @@
                         <viewLayoutGuide key="safeArea" id="Xhc-ME-G17"/>
                     </view>
                     <navigationItem key="navigationItem" title="내역공유" leftItemsSupplementBackButton="YES" id="aNq-PE-Ny6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Whb-f4-XNB"/>
+                        <barButtonItem key="rightBarButtonItem" title="올리기" id="Whb-f4-XNB">
+                            <connections>
+                                <action selector="onUploadPressed" destination="qHT-Yc-8Yo" id="cbD-Md-Ies"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="amountLabel" destination="sUq-Mp-e2j" id="sbq-b5-wW9"/>

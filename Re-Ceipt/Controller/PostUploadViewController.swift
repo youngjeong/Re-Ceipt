@@ -14,7 +14,7 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
     func updateAmount()
     {
         var amount = 0
-        for spend in spendList {
+        for spend in appliedSpendList {
             amount += spend.amount!
         }
         
@@ -39,15 +39,27 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
     var from: String = ""
     var to: String = ""
     
-    @IBAction func onFromClicked() {
+    @IBAction func onUploadPressed() {
+        let alert = UIAlertController(title: "포스팅 업로드", message: "타이틀을 입력하세요", preferredStyle: .alert)
         
+        alert.addTextField { (textField) in
+            textField.placeholder = "오늘의 사용 내역"
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField: UITextField = (alert?.textFields![0])!
+            if let text = textField.text {
+                Communicator.uploadPost(self.view, title: text.count <= 0 ? textField.placeholder! : text, start_date: self.from, end_date: self.to) { post in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func onToClicked() {
-        
-    }
-    
-    var spendList: [Spend] = []
+    var originalSpendList: [Spend] = []
+    var appliedSpendList: [Spend] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -62,9 +74,45 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
         to = formatter.string(from: today_date)
     }
     
+    func updateAppliedSpendList()
+    {
+        appliedSpendList = originalSpendList
+        let startIndex = appliedSpendList.index(where: { (item) -> Bool in
+            item.date!.compare(to).rawValue <= 0
+        })
+        
+        do {
+            try appliedSpendList.sort(by: {(p, q) throws -> Bool in
+                p.date! < q.date!
+            })
+        }
+        catch {
+            print(error)
+        }
+        
+        var endIndex = startIndex
+        if let temp = appliedSpendList.index(where: { (item) -> Bool in
+            item.date!.compare(from).rawValue >= 0
+        }) {
+            endIndex = appliedSpendList.count - 1 - temp
+            
+            if (startIndex! <= endIndex!) {
+                appliedSpendList = Array(originalSpendList[startIndex!...endIndex!])
+            } else {
+                appliedSpendList = []
+            }
+        } else {
+            appliedSpendList = []
+        }
+        
+        updateAmount()
+        tableView.reloadData()
+    }
+    
     func updateTextFields() {
         fromTextField.text = from + " 부터"
         toTextField.text = to + " 까지"
+        updateAppliedSpendList()
     }
     
     override func viewDidLoad() {
@@ -141,18 +189,18 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return spendList.count
+        return appliedSpendList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "SpendCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MySpendViewCell
-        cell.titleLabel.text = spendList[indexPath.row].title
-        let date = spendList[indexPath.row].date!
+        cell.titleLabel.text = appliedSpendList[indexPath.row].title
+        let date = appliedSpendList[indexPath.row].date!
         cell.dateLabel.text = date
         
         
-        let amount = NSNumber(value: spendList[indexPath.row].amount!)
+        let amount = NSNumber(value: appliedSpendList[indexPath.row].amount!)
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true

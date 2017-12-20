@@ -19,6 +19,7 @@ class AddSpendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         
         let today_date = Date()
         let formatter = DateFormatter()

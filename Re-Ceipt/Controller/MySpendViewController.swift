@@ -226,7 +226,7 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
             previewViewController.imagePath = "like"
         } else if segue.identifier == "UploadSegue" {
             let postUploadViewController = segue.destination as! PostUploadViewController
-            postUploadViewController.spendList = self.spendList
+            postUploadViewController.originalSpendList = self.spendList
         } else {
             let elseViewController = segue.destination as! AddSpendViewController
             elseViewController.delegate = self
