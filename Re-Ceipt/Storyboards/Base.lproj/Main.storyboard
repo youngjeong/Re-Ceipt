@@ -366,6 +366,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-kQ-3D9">
+                                <rect key="frame" x="51" y="451" width="273" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="여기를 눌러 사진을 등록하세요!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchCamera" destination="qMf-Cd-1oJ" eventType="touchUpInside" id="wcB-yy-zYj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77992439270000002" green="0.94392359260000003" blue="0.81186991929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -381,6 +391,7 @@
                         <viewLayoutGuide key="safeArea" id="46S-gc-guf"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="SEO-kQ-3D9" id="7d0-P7-xnE"/>
                         <outlet property="review_field" destination="o72-Of-eGL" id="SPm-mE-br4"/>
                         <outlet property="title_field" destination="1qc-NK-pVO" id="zgE-cn-Zgi"/>
                         <outletCollection property="Buttons" destination="PGq-CE-DLg" collectionClass="NSMutableArray" id="S6z-qK-SjA"/>
@@ -396,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMW-gZ-HFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4383" y="-913"/>
+            <point key="canvasLocation" x="4381.6000000000004" y="-913.49325337331345"/>
         </scene>
         <!--지출내역-->
         <scene sceneID="LNv-eh-uCD">
@@ -618,7 +629,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A2I-BA-BF2" id="8j5-Kx-ItW" customClass="CommentTableViewCell" customModule="Re_Ceipt" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-Gy-Vrc">
@@ -1178,7 +1189,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m6m-ca-FHT" id="XX5-7v-j5W" customClass="SpendViewCell" customModule="Re_Ceipt" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-G8-cJW">
@@ -1423,6 +1434,49 @@
             </objects>
             <point key="canvasLocation" x="1839" y="-991"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lYb-qm-r2J">
+            <objects>
+                <viewController id="Ybb-80-Tyc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bwj-O0-tf5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jpm-sj-S03"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2N-e4-Ptw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="H9V-oe-Swq">
+            <objects>
+                <viewController storyboardIdentifier="PreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wjG-um-75V" customClass="PreviewViewController" customModule="Re_Ceipt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9VA-hi-1Pn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="receipt" translatesAutoresizingMaskIntoConstraints="NO" id="S0G-kg-7j4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S0G-kg-7j4" firstAttribute="bottom" secondItem="ZZx-0l-Uoe" secondAttribute="bottom" id="7M9-KJ-bA5"/>
+                            <constraint firstItem="S0G-kg-7j4" firstAttribute="leading" secondItem="ZZx-0l-Uoe" secondAttribute="leading" id="FhC-e1-7UQ"/>
+                            <constraint firstItem="S0G-kg-7j4" firstAttribute="trailing" secondItem="ZZx-0l-Uoe" secondAttribute="trailing" id="hbY-1n-Kg5"/>
+                            <constraint firstItem="S0G-kg-7j4" firstAttribute="top" secondItem="9VA-hi-1Pn" secondAttribute="top" id="mp6-Ec-dhq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZZx-0l-Uoe"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="S0G-kg-7j4" id="FOS-ea-w7o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yyc-CD-WWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4669.6000000000004" y="-16.641679160419791"/>
+        </scene>
     </scenes>
     <resources>
         <image name="001-user" width="42" height="42"/>
@@ -1434,6 +1488,7 @@
         <image name="icon_account" width="512" height="512"/>
         <image name="icon_password" width="512" height="512"/>
         <image name="like" width="128" height="128"/>
+        <image name="receipt" width="500" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2c-Mv-o1E"/>

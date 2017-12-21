@@ -8,10 +8,51 @@
 
 import UIKit
 
-class AddSpend2ViewController: UIViewController {
+class AddSpend2ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var review_field: UILabel!
     @IBOutlet var Buttons: Array<UIButton>?
     @IBOutlet weak var title_field: UITextField!
+    
+    @IBOutlet weak var button: UIButton!
+    
+    
+    let imagePicker = UIImagePickerController()
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+            let imageName = imageURL.lastPathComponent
+            
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            button.imageView?.image = selectedImage
+            button.imageView?.contentMode = .scaleAspectFill
+            button.imageView?.clipsToBounds = true
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onTouchCamera() {
+        let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        })
+        
+        let photoLibraryAction = UIAlertAction(title: "Photo library", style: .default, handler: { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        })
+        photoSourceRequestController.addAction(cameraAction)
+        photoSourceRequestController.addAction(photoLibraryAction)
+        present(photoSourceRequestController, animated: true, completion: nil)
+    }
     
     var delegate: TopViewControllerProtocol!
     
@@ -42,11 +83,10 @@ class AddSpend2ViewController: UIViewController {
     {
         if let title = title_field.text{
             Communicator.addSpend(self.view, title: title, type: sender.currentTitle!, date: date, amount: Int(amount)!){
-                print("Success")
-                
                 self.navigationController?.popToRootViewController(animated: true)
                 self.delegate.dismissViewController()
             }
+            
         }
     }
     /*

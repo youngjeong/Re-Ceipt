@@ -14,8 +14,8 @@ import AlamofireImage
 
 
 class Communicator {
-    static var serverURL: String = "http://127.0.0.1:8000/"
-//    static var serverURL: String = "http://52.78.44.214:8000/"
+//    static var serverURL: String = "http://127.0.0.1:8000/"
+    static var serverURL: String = "http://52.78.44.214:8000/"
     static var headers = [String:String]()
     
     static func showActivityIndicatory(parent: UIView) -> UIActivityIndicatorView{
@@ -133,6 +133,37 @@ class Communicator {
         }
     }
     
+    static func addSpend(_ parent: UIView, title: String, type: String, date: String, amount: Int, image: UIImage, onSuccess: @escaping () -> Void) {
+        let api = "spend/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                let imageData = UIImageJPEGRepresentation(image, 0.8)
+                multipartFormData.append(imageData!, withName: "image", fileName: "photo.jpg", mimeType: "jpg/png")
+                
+                multipartFormData.append("\(title)".data(using: .utf8)!, withName: "title")
+                multipartFormData.append("\(type)".data(using: .utf8)!, withName: "type")
+                multipartFormData.append("\(date)".data(using: .utf8)!, withName: "date")
+                multipartFormData.append("\(amount)".data(using: .utf8)!, withName: "amount")
+        },
+            to: URL(string: serverURL + api)!,
+            headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    stopActivityIndicatory(parent: parent, actInd: ind)
+                    onSuccess()
+                    
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    }
+                case .failure(let error):
+                    onFail(parent, ind)
+                }
+        })
+    }
+    
     static func getMySpend(_ parent: UIView, onSuccess: @escaping ([Spend]) -> Void) {
         let api = "myspend/"
         let ind = showActivityIndicatory(parent: parent)
@@ -209,12 +240,11 @@ class Communicator {
         }
     }
     
-    static func getImage(view parent: UIView, onSuccess: @escaping (UIImage) -> Void) {
-        let api = "image/"
+    static func getImage(view parent: UIView, image_path: String, onSuccess: @escaping (UIImage) -> Void) {
         let ind = showActivityIndicatory(parent: parent)
         
         Alamofire.request(
-            URL(string: serverURL + api)!,
+            URL(string: image_path)!,
             method: .get,
             encoding: JSONEncoding.default,
             headers: headers

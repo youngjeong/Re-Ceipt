@@ -22,8 +22,12 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-//        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! SpendDetailViewController
-        return nil
+
+        guard let indexPath = self.tableView.indexPathForRow(at: location) else { return nil }
+        
+        let previewView = storyboard?.instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController
+        previewView.imagePath = appliedSpendList[indexPath.row].photo_path
+        return previewView
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -140,7 +144,7 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
         {
-            registerForPreviewing(with: self, sourceView: view)
+            registerForPreviewing(with: self, sourceView: tableView)
         }
         else
         {

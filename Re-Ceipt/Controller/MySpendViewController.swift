@@ -29,8 +29,12 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-//        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! SpendDetailViewController
-        return nil
+        
+        guard let indexPath = self.tableView.indexPathForRow(at: location) else { return nil }
+        
+        let previewView = storyboard?.instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController
+        previewView.imagePath = spendList[indexPath.row].photo_path
+        return previewView
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -92,6 +96,8 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.addSubview(refreshControl)
         
+        userLabel.text = "\(spendList[spendList.startIndex].author!.username!) 소비 내역서"
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         
@@ -103,7 +109,7 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
         {
-            registerForPreviewing(with: self, sourceView: view)
+            registerForPreviewing(with: self, sourceView: tableView)
         }
         else
         {

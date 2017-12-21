@@ -11,7 +11,11 @@ import EFCountingLabel
 
 class PostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview")
+        
+        guard let indexPath = self.tableView.indexPathForRow(at: location) else { return nil }
+        
+        let previewView = storyboard?.instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController
+        previewView.imagePath = post?.spend_list![indexPath.row].photo_path
         return previewView
     }
     
@@ -37,6 +41,8 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
+        userLabel.text = "\(post!.author!.username!) 소비 내역서"
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         
@@ -48,7 +54,7 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
         {
-            registerForPreviewing(with: self, sourceView: view)
+            registerForPreviewing(with: self, sourceView: tableView)
         }
         else
         {
