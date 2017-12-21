@@ -100,6 +100,11 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         currencyFormatter.locale = Locale.init(identifier: "ko_KR")
         cell.amountLabel.text = currencyFormatter.string(from: amount)
         
+        
+        cell.likeLabel.text = String(spendList[indexPath.row].like_cnt!)
+        cell.hateLabel.text = String(spendList[indexPath.row].dislike_cnt!)
+        cell.commentLabel.text = String(spendList[indexPath.row].comment_cnt!)
+        
         return cell
     }
     
@@ -152,9 +157,10 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "PreviewSegue" {
-            let previewViewController = segue.destination as! PreviewViewController
-            previewViewController.imagePath = "like"
+        if segue.identifier == "CommentListSegue" {
+            let spendDetailViewController = segue.destination as! SpendDetailViewController
+            let index = tableView.indexPathForSelectedRow?.row
+            spendDetailViewController.spend = post!.spend_list![index!]
         }
     }
     

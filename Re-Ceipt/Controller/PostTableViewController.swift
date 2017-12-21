@@ -94,9 +94,14 @@ class PostTableViewController: UITableViewController {
         let index = date.index(date.startIndex, offsetBy: 10)
         cell.dateLabel.text = String(date[..<index])
         
+        var like = 0, dislike = 0, comment = 0
+        
         var amount = 0
         for spend in postList[indexPath.row].spend_list! {
             amount += spend.amount!
+            like += spend.like_cnt!
+            dislike += spend.dislike_cnt!
+            comment += spend.comment_cnt!
         }
         
         let currencyFormatter = NumberFormatter()
@@ -104,6 +109,10 @@ class PostTableViewController: UITableViewController {
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale.init(identifier: "ko_KR")
         cell.amountLabel.text = currencyFormatter.string(from: NSNumber(value: amount))
+        
+        cell.likeLabel.text = String(like)
+        cell.hateLabel.text = String(dislike)
+        cell.commentLabel.text = String(comment)
 
         return cell
     }

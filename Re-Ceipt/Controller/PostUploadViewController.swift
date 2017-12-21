@@ -22,9 +22,8 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! PreviewViewController
-        previewView.imagePath = "dislike"
-        return previewView
+//        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! SpendDetailViewController
+        return nil
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -263,9 +262,10 @@ class PostUploadViewController: UIViewController, UITableViewDelegate, UITableVi
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "PreviewSegue" {
-            let previewViewController = segue.destination as! PreviewViewController
-            previewViewController.imagePath = "like"
+        if segue.identifier == "CommentListSegue" {
+            let spendDetailViewController = segue.destination as! SpendDetailViewController
+            let index = tableView.indexPathForSelectedRow?.row
+            spendDetailViewController.spend = appliedSpendList[index!]
         }
     }
 }

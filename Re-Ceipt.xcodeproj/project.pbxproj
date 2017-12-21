@@ -14,10 +14,12 @@
 		1F8906181FEA2859005E1287 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906171FEA2859005E1287 /* UIColor+Ext.swift */; };
 		1F89061B1FEA85F3005E1287 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */; };
 		1F89061D1FEAC681005E1287 /* SpendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061C1FEAC681005E1287 /* SpendViewCell.swift */; };
-		1F89061F1FEACDC2005E1287 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */; };
+		1F89061F1FEACDC2005E1287 /* SpendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89061E1FEACDC2005E1287 /* SpendDetailViewController.swift */; };
 		1F8906221FEAD3D9005E1287 /* TopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906211FEAD3D9005E1287 /* TopViewControllerDelegate.swift */; };
 		1F8906241FEAD820005E1287 /* PostUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906231FEAD820005E1287 /* PostUploadViewController.swift */; };
 		1F8906261FEAF81C005E1287 /* UIVIewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8906251FEAF81C005E1287 /* UIVIewController+Ext.swift */; };
+		1F8E056D1FEB58BC005A2B76 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E056C1FEB58BC005A2B76 /* CommentTableViewCell.swift */; };
+		1F8E056F1FEB5EA1005A2B76 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E056E1FEB5EA1005A2B76 /* Comment.swift */; };
 		1F97CA921FD9401100336D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA911FD9401100336D3F /* AppDelegate.swift */; };
 		1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97CA931FD9401100336D3F /* LoginViewController.swift */; };
 		1F97CA971FD9401100336D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F97CA951FD9401100336D3F /* Main.storyboard */; };
@@ -41,10 +43,12 @@
 		1F8906171FEA2859005E1287 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		1F89061C1FEAC681005E1287 /* SpendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendViewCell.swift; sourceTree = "<group>"; };
-		1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		1F89061E1FEACDC2005E1287 /* SpendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendDetailViewController.swift; sourceTree = "<group>"; };
 		1F8906211FEAD3D9005E1287 /* TopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1F8906231FEAD820005E1287 /* PostUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUploadViewController.swift; sourceTree = "<group>"; };
 		1F8906251FEAF81C005E1287 /* UIVIewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Ext.swift"; sourceTree = "<group>"; };
+		1F8E056C1FEB58BC005A2B76 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		1F8E056E1FEB5EA1005A2B76 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		1F97CA8E1FD9401100336D3F /* Re-Ceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Re-Ceipt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F97CA911FD9401100336D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F97CA931FD9401100336D3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 				1F6DF7F51FE6731F008958C9 /* MySpendViewCell.swift */,
 				1F8906141FEA2275005E1287 /* PostViewCell.swift */,
 				1F89061C1FEAC681005E1287 /* SpendViewCell.swift */,
+				1F8E056C1FEB58BC005A2B76 /* CommentTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				7D9679D91FE5222600BB9F02 /* Model */,
 				1F97CAA31FDD059B00336D3F /* Controller */,
 				1F97CA911FD9401100336D3F /* AppDelegate.swift */,
+				1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */,
 				1F97CA981FD9401100336D3F /* Assets.xcassets */,
 				1F97CA9D1FD9401100336D3F /* Info.plist */,
 			);
@@ -149,16 +155,15 @@
 		1F97CAA31FDD059B00336D3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */,
+				7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */,
 				1F97CA931FD9401100336D3F /* LoginViewController.swift */,
-				1FE8AA031FE14A3500EBCBA7 /* Communicator.swift */,
 				7D9679D61FE5079D00BB9F02 /* MySpendViewController.swift */,
 				1F8906121FEA21C7005E1287 /* PostTableViewController.swift */,
 				1F89061A1FEA85F3005E1287 /* PostDetailViewController.swift */,
-				7D876EA51FE7D356006AF6DB /* AddSpendViewController.swift */,
-				7D876EA71FE834EE006AF6DB /* AddSpend2ViewController.swift */,
-				1F89061E1FEACDC2005E1287 /* PreviewViewController.swift */,
 				1F8906231FEAD820005E1287 /* PostUploadViewController.swift */,
 				7D90F3E81FEAE5E000D049ED /* SpendChartViewController.swift */,
+				1F89061E1FEACDC2005E1287 /* SpendDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				7D9679DA1FE5225D00BB9F02 /* User.swift */,
 				7D9679DC1FE5227500BB9F02 /* Spend.swift */,
 				1F8906101FEA1198005E1287 /* Post.swift */,
+				1F8E056E1FEB5EA1005A2B76 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,12 +341,14 @@
 				1FE8AA041FE14A3500EBCBA7 /* Communicator.swift in Sources */,
 				1F89061B1FEA85F3005E1287 /* PostDetailViewController.swift in Sources */,
 				7D876EA61FE7D356006AF6DB /* AddSpendViewController.swift in Sources */,
+				1F8E056D1FEB58BC005A2B76 /* CommentTableViewCell.swift in Sources */,
 				7D9679D71FE5079D00BB9F02 /* MySpendViewController.swift in Sources */,
 				1F8906261FEAF81C005E1287 /* UIVIewController+Ext.swift in Sources */,
 				7D9679DD1FE5227500BB9F02 /* Spend.swift in Sources */,
 				1F8906131FEA21C7005E1287 /* PostTableViewController.swift in Sources */,
+				1F8E056F1FEB5EA1005A2B76 /* Comment.swift in Sources */,
 				1F8906181FEA2859005E1287 /* UIColor+Ext.swift in Sources */,
-				1F89061F1FEACDC2005E1287 /* PreviewViewController.swift in Sources */,
+				1F89061F1FEACDC2005E1287 /* SpendDetailViewController.swift in Sources */,
 				1F8906151FEA2275005E1287 /* PostViewCell.swift in Sources */,
 				1F8906111FEA1198005E1287 /* Post.swift in Sources */,
 				1F97CA941FD9401100336D3F /* LoginViewController.swift in Sources */,

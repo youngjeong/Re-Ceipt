@@ -25,6 +25,16 @@ class SpendChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        amountLabel.method = .easeInOut
+        amountLabel.formatBlock = {
+            (value) in
+            return "₩ " + (formatter.string(from: NSNumber(value: Int(value))) ?? "")
+        }
+        
         pieChart.data = nil
         pieChart.notifyDataSetChanged()
         let today_date = Date()
@@ -51,7 +61,6 @@ class SpendChartViewController: UIViewController {
         StartDateField.inputView = startdatePicker
         EndDateField.inputView = enddatePicker
         
-        
         updateChart()
         // Do any additional setup after loading the view.
     }
@@ -64,7 +73,7 @@ class SpendChartViewController: UIViewController {
     fileprivate func updateChart() {
         Dataset.removeAll()
         
-        
+        var totalAmount = 0
         
         for data in spendList{
             let target: String = data.date!
@@ -73,8 +82,13 @@ class SpendChartViewController: UIViewController {
                     Dataset[data.type!] = 0
                 }
                 Dataset[data.type!]! += Int(data.amount!)
+                totalAmount += data.amount!
             }
         }
+        
+        
+        amountLabel.countFrom(0, to: CGFloat(totalAmount))
+        
         pieChart.data = nil
         pieChart.notifyDataSetChanged()
         

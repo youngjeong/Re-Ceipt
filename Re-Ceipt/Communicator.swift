@@ -209,7 +209,7 @@ class Communicator {
         }
     }
     
-    static func getImage(_ parent: UIView, onSuccess: @escaping (UIImage) -> Void) {
+    static func getImage(view parent: UIView, onSuccess: @escaping (UIImage) -> Void) {
         let api = "image/"
         let ind = showActivityIndicatory(parent: parent)
         
@@ -258,6 +258,31 @@ class Communicator {
                 }
             }
                 
+    }
+    
+    static func getCommentList(_ parent: UIView, from spend: Spend, onSuccess: @escaping ([Comment]) -> Void) {
+        let api = "spend/" + String(spend.id!) + "/comment/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseArray { (response: DataResponse<[Comment]>) in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                if let commentList = response.result.value {
+                    onSuccess(commentList)
+                }
+        }
     }
     
     static func onFail(_ parent: UIView, _ ind: UIActivityIndicatorView) {

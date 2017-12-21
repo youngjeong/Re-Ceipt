@@ -29,9 +29,8 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! PreviewViewController
-        previewView.imagePath = "dislike"
-        return previewView
+//        let previewView = storyboard?.instantiateViewController(withIdentifier: "Preview") as! SpendDetailViewController
+        return nil
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -227,17 +226,13 @@ class MySpendViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "PreviewSegue" {
-            let previewViewController = segue.destination as! PreviewViewController
-            previewViewController.imagePath = "like"
-        } else if segue.identifier == "UploadSegue" {
+        if segue.identifier == "UploadSegue" {
             let postUploadViewController = segue.destination as! PostUploadViewController
             postUploadViewController.originalSpendList = self.spendList
         } else if segue.identifier == "ChartSegue" {
             let spendChartViewController = segue.destination as! SpendChartViewController
             spendChartViewController.spendList = self.spendList
-        }else {
+        } else {
             let elseViewController = segue.destination as! AddSpendViewController
             elseViewController.delegate = self
         }

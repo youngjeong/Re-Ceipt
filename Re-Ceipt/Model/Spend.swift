@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class Spend: Mappable {
-    var pk: Int?
+    var id: Int?
     var author: User?
     var created: String?
     var modified: String?
@@ -19,13 +19,16 @@ class Spend: Mappable {
     var type: String?
     var amount: Int?
     var photo_path: String?
+    var like_cnt: Int?
+    var dislike_cnt: Int?
+    var comment_cnt: Int?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        pk <- map["pk"]
+        id <- map["id"]
         author <- map["author"]
         created <- map["created"]
         modified <- map["modified"]
@@ -34,6 +37,9 @@ class Spend: Mappable {
         type <- map["type"]
         amount <- map["amount"]
         photo_path <- map["photo_path"]
+        like_cnt <- map["like_cnt"]
+        dislike_cnt <- map["dislike_cnt"]
+        comment_cnt <- map["comment_cnt"]
     }
     
     
