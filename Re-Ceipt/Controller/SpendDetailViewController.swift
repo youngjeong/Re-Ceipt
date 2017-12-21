@@ -19,13 +19,39 @@ class SpendDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var commentLabel: UILabel!
     
     @IBAction func onLike() {
-        
+        Communicator.react(self.view, from: spend, data: "LIKE") {
+            Communicator.getSpend(self.view, from: self.spend) { spend in
+                self.spend = spend
+                self.viewWillAppear(true)
+            }
+        }
     }
     @IBAction func onDislike() {
+        Communicator.react(self.view, from: spend, data: "DISLIKE") {
+            Communicator.getSpend(self.view, from: self.spend) { spend in
+                self.spend = spend
+                self.viewWillAppear(true)
+            }
+        }
         
     }
     @IBAction func onComment() {
+        let alert = UIAlertController(title: "댓글 업로드", message: "댓글을 입력하세요", preferredStyle: .alert)
         
+        alert.addTextField { (textField) in
+            textField.placeholder = "합리적인 소비에 박수를!"
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField: UITextField = (alert?.textFields![0])!
+            if let text = textField.text {
+                Communicator.addComment(self.view, from: self.spend, data: text.count <= 0 ? textField.placeholder! : text) {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     var spend: Spend! = nil

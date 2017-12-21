@@ -285,6 +285,116 @@ class Communicator {
         }
     }
     
+    
+    static func react(_ parent: UIView, from spend: Spend, data type: String, onSuccess: @escaping () -> Void) {
+        let api = "spend/" + String(spend.id!) + "/react/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .post,
+            parameters: ["type": type],
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseJSON{ (response) -> Void in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                if let data = response.result.value {
+                    onSuccess()
+                } else {
+                    onFail(parent, ind)
+                }
+        }
+    }
+    
+    
+    static func getSpend(_ parent: UIView, from spend: Spend, onSuccess: @escaping (Spend) -> Void) {
+        let api = "spend/" + String(spend.id!) + "/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseObject{ (response: DataResponse<Spend>) in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                if let spend = response.result.value {
+                    onSuccess(spend)
+                } else {
+                    onFail(parent, ind)
+                }
+        }
+    }
+    
+    static func getPost(_ parent: UIView, from post: Post, onSuccess: @escaping (Post) -> Void) {
+        let api = "post/" + String(post.id!) + "/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseObject{ (response: DataResponse<Post>) in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                stopActivityIndicatory(parent: parent, actInd: ind)
+                if let post = response.result.value {
+                    onSuccess(post)
+                } else {
+                    onFail(parent, ind)
+                }
+        }
+    }
+    
+    static func addComment(_ parent: UIView, from spend: Spend, data comment: String, onSuccess: @escaping () -> Void) {
+        let api = "spend/" + String(spend.id!) + "/comment/"
+        let ind = showActivityIndicatory(parent: parent)
+        
+        Alamofire.request(
+            URL(string: serverURL + api)!,
+            method: .post,
+            parameters: ["content": comment],
+            encoding: JSONEncoding.default,
+            headers: headers
+            )
+            .validate()
+            .responseJSON{ (response) -> Void in
+                guard response.result.isSuccess else {
+                    print("Error while fetching remote rooms: \(String(describing: response.result.error))")
+                    onFail(parent, ind)
+                    return
+                }
+                
+                if let data = response.result.value {
+                    onSuccess()
+                } else {
+                    onFail(parent, ind)
+                }
+        }
+    }
+    
     static func onFail(_ parent: UIView, _ ind: UIActivityIndicatorView) {
         stopActivityIndicatory(parent: parent, actInd: ind)
     }

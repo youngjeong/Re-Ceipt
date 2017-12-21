@@ -10,27 +10,27 @@ import Foundation
 import ObjectMapper
 
 class Post: Mappable {
-    var pk: Int?
+    var id: Int?
     var author: User?
     var created: String?
     var modified: String?
     var title: String?
     var spend_list: [Spend]?
-    var start_idx: String?
-    var end_idx: String?
+    var start_date: String?
+    var end_date: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        pk <- map["pk"]
+        id <- map["id"]
         author <- map["author"]
         created <- map["created"]
         modified <- map["modified"]
         title <- map["title"]
         spend_list <- map["spend_list"]
-        start_idx <- map["start_idx"]
-        end_idx <- map["end_idx"]
+        start_date <- map["start_date"]
+        end_date <- map["end_date"]
     }
 }

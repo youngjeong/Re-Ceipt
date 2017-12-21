@@ -23,6 +23,8 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var amountLabel: EFCountingLabel!
     
+    var refreshControl = UIRefreshControl()
+    
     var post: Post? = nil {
         didSet {
             tableView?.reloadData()
@@ -31,6 +33,9 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -56,6 +61,14 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    @objc func didPullToRefresh() {
+        Communicator.getPost(self.view, from: post!) { post in
+            self.post = post
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         var amount = 0
         for spend in post!.spend_list! {
@@ -63,6 +76,12 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         amountLabel.countFrom(0, to: CGFloat(amount))
+        
+        Communicator.getPost(self.view, from: post!) { post in
+            self.post = post
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
     }
     
     override func didReceiveMemoryWarning() {

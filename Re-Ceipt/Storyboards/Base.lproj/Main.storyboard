@@ -618,36 +618,24 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A2I-BA-BF2" id="8j5-Kx-ItW" customClass="CommentTableViewCell" customModule="Re_Ceipt" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-VU-YsF">
-                                                    <rect key="frame" x="14" y="-2" width="106" height="58.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="ZjS-bO-9Mm"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-Gy-Vrc">
-                                                    <rect key="frame" x="120" y="-2" width="238" height="58.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="238" id="RcY-vn-YC7"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-Gy-Vrc">
+                                                    <rect key="frame" x="122" y="-2" width="238" height="58.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-VU-YsF">
+                                                    <rect key="frame" x="15" y="-2" width="106" height="58.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="mdd-VU-YsF" firstAttribute="top" secondItem="8j5-Kx-ItW" secondAttribute="topMargin" constant="-13" id="1PV-e9-Q2y"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zkZ-Gy-Vrc" secondAttribute="trailing" constant="2" id="9Ai-mN-qjJ"/>
-                                                <constraint firstItem="zkZ-Gy-Vrc" firstAttribute="centerY" secondItem="8j5-Kx-ItW" secondAttribute="centerY" id="DVf-ol-aK9"/>
-                                                <constraint firstItem="mdd-VU-YsF" firstAttribute="leading" secondItem="8j5-Kx-ItW" secondAttribute="leadingMargin" constant="-1" id="Ti8-SV-2J4"/>
-                                                <constraint firstItem="mdd-VU-YsF" firstAttribute="baseline" secondItem="zkZ-Gy-Vrc" secondAttribute="baseline" id="fnm-xp-qbm"/>
-                                                <constraint firstItem="mdd-VU-YsF" firstAttribute="centerY" secondItem="8j5-Kx-ItW" secondAttribute="centerY" id="sUT-eR-KRp"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="zkZ-Gy-Vrc" id="dCJ-xV-ZK5"/>
@@ -1190,7 +1178,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m6m-ca-FHT" id="XX5-7v-j5W" customClass="SpendViewCell" customModule="Re_Ceipt" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-G8-cJW">
@@ -1448,6 +1436,6 @@
         <image name="like" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GrJ-72-fIR"/>
+        <segue reference="X2c-Mv-o1E"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class Comment: Mappable {
+    var test: String?
     var author: User?
     var content: String?
     
@@ -18,8 +19,9 @@ class Comment: Mappable {
     }
     
     func mapping(map: Map) {
-        content <- map["content"]
+        test <- map["test"]
         author <- map["author"]
+        content <- map["content"]
         
     }
     
